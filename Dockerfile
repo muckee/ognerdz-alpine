@@ -5,9 +5,6 @@ RUN apk update && apk add --no-cache \
                   openssh-client \
                   git
 
-# Update npm and install yarn and workspace-tools as root
-RUN npm install -g npm && npm i -g yarn yarn-workspace-tools && apk del npm
-
 # Create filesystem user
 RUN addgroup -S 1000 && \
     adduser -S 1000 -G 1000 && \
